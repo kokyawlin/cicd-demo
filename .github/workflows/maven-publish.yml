@@ -30,14 +30,13 @@ jobs:
     
     steps: 
       - uses: actions/checkout@v3 
-      - name: Set up JDK 20 
+      - name: Run Test with Maven  
         uses: actions/setup-java@v3 
         with:
           java-version: '20' 
           distribution: 'temurin' 
           cache: maven
-      - name: Run Test with Maven 
-        run: mvn -B test
+          run: mvn -B test
       
   sonar: 
       needs: test 
